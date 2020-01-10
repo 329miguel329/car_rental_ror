@@ -1,0 +1,9 @@
+es:
+  activerecord:
+    models:
+      card_type:
+        one: "Tipo de identificación"
+        other: "Tipos de identificación"
+  gui:
+    menu:
+      home: "Inicio"
