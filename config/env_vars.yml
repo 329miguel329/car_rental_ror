@@ -1,0 +1,42 @@
+development:
+  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_PASSWORD: 'car_rental23456789'
+  EMAIL_DOMAIN: gmail.com
+  EMAIL_SMTP_SERVER: smtp.gmail.com
+  EMAIL_SMTP_PORT: '587'
+  DATABASE_URL: 'postgres://car_rental:car_rental@localhost:5432/car_rental_dev'
+  DATABASE_NAME: 'car_rental_dev'
+  DATABASE_USER_NAME: 'car_rental'
+  DATABASE_PASSWORD: 'car_rental'
+  RAILS_MAX_THREADS: '5'
+  HOST_DOMAIN: 'localhost:3000'
+  secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
+  secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
+production:
+  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_PASSWORD: 'car_rental23456789'
+  EMAIL_DOMAIN: gmail.com
+  EMAIL_SMTP_SERVER: smtp.gmail.com
+  EMAIL_SMTP_PORT: '587'
+  DATABASE_URL: 'postgres://car_rental:car_rental@localhost:5432/car_rental_pro'
+  DATABASE_NAME: 'car_rental_pro'
+  DATABASE_USER_NAME: 'car_rental'
+  DATABASE_PASSWORD: 'car_rental'
+  RAILS_MAX_THREADS: '5'
+  HOST_DOMAIN: 'localhost:3000'
+  secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
+  secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
+test:
+  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_PASSWORD: 'car_rental23456789'
+  EMAIL_DOMAIN: gmail.com
+  EMAIL_SMTP_SERVER: smtp.gmail.com
+  EMAIL_SMTP_PORT: '587'
+  DATABASE_URL: 'postgres://car_rental:car_rental@localhost:5432/car_rental_test'
+  DATABASE_NAME: 'car_rental_test'
+  DATABASE_USER_NAME: 'car_rental'
+  DATABASE_PASSWORD: 'car_rental'
+  RAILS_MAX_THREADS: '5'
+  HOST_DOMAIN: 'localhost:3000'
+  secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
+  secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
