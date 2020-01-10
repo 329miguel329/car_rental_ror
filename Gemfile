@@ -53,3 +53,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
+
+#### Gems added for this project
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+
+# BreadcrumbsOnRails is a simple Ruby on Rails plugin for creating and managing a breadcrumb navigation for a Rails project.
+gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'

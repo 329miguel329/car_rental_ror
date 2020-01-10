@@ -38,5 +38,8 @@ module CarRental
       g.helper false
       g.stylesheets false
     end
+
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'sb_admin')
+    config.assets.precompile += ['application-print.css']
   end
 end
