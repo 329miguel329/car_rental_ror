@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= form.label "#{t("activerecord.attributes.card_types.code")} *", class: "control-label col-md-3" %>
+    <%= form.text_field :code, class: "form-control", placeholder: t("activerecord.attributes.card_types.code"), required: true %>
+  </div>
+
   <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
   </div>
 
   <div class="field">

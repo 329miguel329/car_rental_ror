@@ -4,6 +4,15 @@ es:
       card_type:
         one: "Tipo de identificación"
         other: "Tipos de identificación"
+    attributes:
+      card_types:
+        code: "Código"
+        name: "Nombre"
   gui:
     menu:
       home: "Inicio"
+    actions:
+      new: "Nuevo"
+    messages:
+      card_types:
+        index: "Lista de tipos de identificación"

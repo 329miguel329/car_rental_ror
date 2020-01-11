@@ -4,6 +4,15 @@ en:
       card_type:
         one: "Id type"
         other: "Id types"
+    attributes:
+      card_types:
+        code: "Code"
+        name: "Name"
   gui:
     menu:
       home: "Home"
+    actions:
+      new: "New"
+    messages:
+      card_types:
+        index: "List id types"

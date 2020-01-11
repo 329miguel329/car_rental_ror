@@ -1,29 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Card Types</h1>
+<h1><%= t("activerecord.models.card_type", :count => 2) %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @card_types.each do |card_type| %>
-      <tr>
-        <td><%= card_type.code %></td>
-        <td><%= card_type.name %></td>
-        <td><%= link_to 'Show', card_type %></td>
-        <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
-        <td><%= link_to 'Destroy', card_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    <%= t("gui.messages.card_types.index") %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th><%= t("activerecord.attributes.card_types.code") %></th>
+            <th><%= t("activerecord.attributes.card_types.name") %></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @card_types.each do |card_type| %>
+            <tr>
+              <td><%= card_type.code %></td>
+              <td><%= card_type.name %></td>
+              <td><%= link_to 'Show', card_type %></td>
+              <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
+              <td><%= link_to 'Destroy', card_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted"></div>
+</div>
 
 <br>
 
-<%= link_to 'New Card Type', new_card_type_path %>
+<%= link_to new_card_type_path, class: "btn btn-success" do %>
+  <i class="fa fa-plus-square"></i>&nbsp;&nbsp;<%= "#{t("gui.actions.new")} #{t("activerecord.models.card_type", count: 1)}" %>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#dataTable').DataTable();
+  });
+</script>
