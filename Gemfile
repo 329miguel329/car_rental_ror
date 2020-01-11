@@ -61,3 +61,8 @@ gem 'devise'
 
 # BreadcrumbsOnRails is a simple Ruby on Rails plugin for creating and managing a breadcrumb navigation for a Rails project.
 gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
+
+#A beautiful, responsive, customizable, accessible (WAI-ARIA) replacement for JavaScript's popup boxes
+gem 'jquery-rails'
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'

@@ -16,3 +16,5 @@
 @import "vendor/fontawesome-free/css/all.min.css";
 @import "vendor/datatables/dataTables.bootstrap4.css";
 @import "css/sb-admin.css";
+@import "sweetalert2.css";
+@import "custom_style.css";

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= t("activerecord.models.card_type", :count => 2) %></h1>
 
 <div class="card mb-3">
@@ -24,9 +22,16 @@
             <tr>
               <td><%= card_type.code %></td>
               <td><%= card_type.name %></td>
-              <td><%= link_to 'Show', card_type %></td>
-              <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
-              <td><%= link_to 'Destroy', card_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to t("gui.actions.show"), card_type %></td>
+              <td><%= link_to t("gui.actions.edit"), edit_card_type_path(card_type) %></td>
+              <td>
+                <%= link_to t("gui.actions.destroy"), card_type, method: :delete, data: {
+                  confirm: t('gui.messages.confirm.destroy.title'),
+                  'confirm-button-text': t('gui.messages.confirm.destroy.textConfirm'),
+                  'cancel-button-text': t('gui.messages.confirm.destroy.textCancel'),
+                  text: t('gui.messages.confirm.destroy.text')
+                } %>
+              </td>
             </tr>
           <% end %>
         </tbody>

@@ -1,30 +1,21 @@
 <%= form_with(model: card_type, local: true) do |form| %>
-  <% if card_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(card_type.errors.count, "error") %> prohibited this card_type from being saved:</h2>
+  <%= render "partials/errorscontent", object: @card_type %>
 
-      <ul>
-      <% card_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.card_types.code")} *", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :code, class: "form-control", placeholder: t("activerecord.attributes.card_types.code"), required: true %>
     </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= form.label "#{t("activerecord.attributes.card_types.code")} *", class: "control-label col-md-3" %>
-    <%= form.text_field :code, class: "form-control", placeholder: t("activerecord.attributes.card_types.code"), required: true %>
   </div>
 
-  <div class="field">
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.card_types.name")} *", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control", placeholder: t("activerecord.attributes.card_types.name"), required: true %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Send', :class => "btn btn-success btn-block" %>
   </div>
 <% end %>

@@ -8,11 +8,32 @@ en:
       card_types:
         code: "Code"
         name: "Name"
+    messages:
+      card_type:
+        created: "Id type created successfully."
+        destroyed: "Id type destroyed successfully."
+        updated: "Id type updated successfully."
+    errors:
+      models:
+        card_type:
+          attributes:
+            code:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
   gui:
     menu:
       home: "Home"
     actions:
       new: "New"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Delete"
     messages:
+      confirm:
+        destroy:
+          text: "If you confirm, the record will be permanently deleted."
+          title: "Are you sure?"
+          textConfirm: "Yes"
+          textCancel: "No"
       card_types:
         index: "List id types"

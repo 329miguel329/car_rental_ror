@@ -8,11 +8,32 @@ es:
       card_types:
         code: "Código"
         name: "Nombre"
+    messages:
+      card_type:
+        created: "Tipo de identificación creado exitosamente."
+        destroyed: "Tipo de identificación eliminado exitosamente."
+        updated: "Tipo de identificación actualizado exitosamente."
+    errors:
+      models:
+        card_type:
+          attributes:
+            code:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
   gui:
     menu:
       home: "Inicio"
     actions:
       new: "Nuevo"
+      show: "Ver"
+      edit: "Editar"
+      destroy: "Eliminar"
     messages:
+      confirm:
+        destroy:
+          text: "Si usted confirma, el registro será eliminado definitivamente."
+          title: "¿Está seguro?"
+          textConfirm: "Si"
+          textCancel: "No"
       card_types:
         index: "Lista de tipos de identificación"

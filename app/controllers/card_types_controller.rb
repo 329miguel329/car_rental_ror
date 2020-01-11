@@ -1,4 +1,5 @@
 class CardTypesController < ApplicationController
+  before_action :set_card_type, only: [:show, :edit, :update, :destroy]
   add_breadcrumb "<i class='fa fa-home'></i> #{I18n.t("gui.menu.home")}".html_safe, :root_path
 
   # GET /card_types
@@ -29,6 +30,12 @@ class CardTypesController < ApplicationController
   def edit
     add_breadcrumb "<i class='fa fa-info-circle'></i> #{I18n.t("activerecord.models.card_type", count: 2)}".html_safe, card_types_path
     add_breadcrumb "<i class='fa fa-pencil-square-o'></i> #{I18n.t("gui.actions.edit")}".html_safe, edit_card_type_path
+  end
+
+  # GET /card_types/1/show
+  def show
+    add_breadcrumb "<i class='fa fa-info-circle'></i> #{I18n.t("activerecord.models.card_type", count: 2)}".html_safe, card_types_path
+    add_breadcrumb "<i class='fa fa-th-list'></i> #{I18n.t("activerecord.models.card_type", count: 1)}".html_safe, card_type_path
   end
 
   # POST /card_types
