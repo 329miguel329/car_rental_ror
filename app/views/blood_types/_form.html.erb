@@ -1,0 +1,22 @@
+<%= form_with(model: blood_type, local: true) do |form| %>
+  <%= render "partials/errorscontent", object: @blood_type %>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.blood_types.code")} *", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :code, class: "form-control", placeholder: t("activerecord.attributes.blood_types.code"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.blood_types.name")} *", class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control", placeholder: t("activerecord.attributes.blood_types.name"), required: true %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Send', :class => "btn btn-success btn-block" %>
+  </div>
+  <hr>
+<% end %>

@@ -4,8 +4,14 @@ es:
       card_type:
         one: "Tipo de identificación"
         other: "Tipos de identificación"
+      blood_type:
+        one: "Grupo Sanguíneo"
+        other: "Grupos Sanguíneos"
     attributes:
       card_types:
+        code: "Código"
+        name: "Nombre"
+      blood_types:
         code: "Código"
         name: "Nombre"
     messages:
@@ -13,6 +19,10 @@ es:
         created: "Tipo de identificación creado exitosamente."
         destroyed: "Tipo de identificación eliminado exitosamente."
         updated: "Tipo de identificación actualizado exitosamente."
+      blood_type:
+        created: "Grupo sanguíneo creado exitosamente."
+        destroyed: "Grupo sanguíneo eliminado exitosamente."
+        updated: "Grupo sanguíneo actualizado exitosamente."
     errors:
       models:
         card_type:
@@ -20,6 +30,15 @@ es:
             code:
               blank: "no puede estar vacío."
               taken: "indicado ya está creado en esta plataforma."
+            name:
+              blank: "no puede estar vacío."
+        blood_type:
+          attributes:
+            code:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            name:
+              blank: "no puede estar vacío."
   gui:
     menu:
       home: "Inicio"
@@ -28,6 +47,7 @@ es:
       show: "Ver"
       edit: "Editar"
       destroy: "Eliminar"
+      back: "Regresar"
     messages:
       confirm:
         destroy:
@@ -37,3 +57,5 @@ es:
           textCancel: "No"
       card_types:
         index: "Lista de tipos de identificación"
+      blood_types:
+        index: "Lista de grupos sanguíneos"

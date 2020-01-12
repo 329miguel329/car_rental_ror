@@ -4,8 +4,14 @@ en:
       card_type:
         one: "Id type"
         other: "Id types"
+      blood_type:
+        one: "Blood type"
+        other: "Blood types"
     attributes:
       card_types:
+        code: "Code"
+        name: "Name"
+      blood_types:
         code: "Code"
         name: "Name"
     messages:
@@ -13,6 +19,10 @@ en:
         created: "Id type created successfully."
         destroyed: "Id type destroyed successfully."
         updated: "Id type updated successfully."
+      blood_type:
+        created: "Blood type created successfully."
+        destroyed: "Blood type destroyed successfully."
+        updated: "Blood type updated successfully."
     errors:
       models:
         card_type:
@@ -20,6 +30,15 @@ en:
             code:
               blank: "can't be blank."
               taken: "indicated is already created on this platform."
+            name:
+              blank: "can't be blank."
+        blood_type:
+          attributes:
+            code:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            name:
+              blank: "can't be blank."
   gui:
     menu:
       home: "Home"
@@ -28,6 +47,7 @@ en:
       show: "Show"
       edit: "Edit"
       destroy: "Delete"
+      back: "Back"
     messages:
       confirm:
         destroy:
@@ -37,3 +57,5 @@ en:
           textCancel: "No"
       card_types:
         index: "List id types"
+      blood_types:
+        index: "List blood types"

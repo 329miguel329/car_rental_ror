@@ -23,13 +23,21 @@
     </div>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="charts.html">
+    <%= link_to card_types_path, class: "nav-link" do %>
       <i class="fas fa-fw fa-chart-area"></i>
-      <span>Charts</span></a>
+      <span><%= t("activerecord.models.card_type", count: 2) %></span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to blood_types_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-chart-area"></i>
+      <span><%= t("activerecord.models.blood_type", count: 2) %></span>
+    <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="tables.html">
       <i class="fas fa-fw fa-table"></i>
-      <span>Tables</span></a>
+      <span>Tables</span>
+    </a>
   </li>
 </ul>

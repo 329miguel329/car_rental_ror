@@ -13,7 +13,7 @@ class CardTypesController < ApplicationController
         if params.has_key?(:select2)
           render json: CardType.select2(params_select2)
         else
-          render json: CardTypeDatatable.new(view_context)
+          render json: {head: :no_content}
         end
       }
     end
@@ -84,18 +84,17 @@ class CardTypesController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_card_type
+      @card_type = CardType.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_card_type
-    @card_type = CardType.find(params[:id])
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def card_type_params
+      params.require(:card_type).permit(:code, :name)
+    end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def card_type_params
-    params.require(:card_type).permit(:code, :name)
-  end
-
-  def params_select2
-    params.require(:select2).permit(:code, :name)
-  end
+    def params_select2
+      params.require(:select2).permit(:code, :name)
+    end
 end
