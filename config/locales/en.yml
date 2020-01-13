@@ -10,6 +10,9 @@ en:
       user:
         one: "User"
         other: "Users"
+      passenger:
+        one: "passenger"
+        other: "Passengers"
     attributes:
       card_types:
         code: "Code"
@@ -31,6 +34,10 @@ en:
         address: "Address"
         password: "Password"
         password_confirmation: "Password confirmation"
+      passengers:
+        email: "Email"
+        identification: "Identification"
+        phone: "Phone"
     messages:
       card_type:
         created: "Id type created successfully."
@@ -44,6 +51,10 @@ en:
         created: "User created successfully."
         destroyed: "User destroyed successfully."
         updated: "User updated successfully."
+      passenger:
+        created: "Passenger created successfully."
+        destroyed: "Passenger destroyed successfully."
+        updated: "Passenger updated successfully."
     errors:
       models:
         card_type:
@@ -94,6 +105,17 @@ en:
               blank: "can't be blank."
             password_confirmation:
               blank: "can't be blank."
+        passenger:
+          attributes:
+            email:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            identification:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            phone:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
   gui:
     menu:
       home: "Home"
@@ -121,6 +143,8 @@ en:
         index: "List blood types"
       users:
         index: "List users"
+      passenger:
+        index: "List passengers"
       register_user_data: "Record passenger information (user)"
   errors:
     messages:

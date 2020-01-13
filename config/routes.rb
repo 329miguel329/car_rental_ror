@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :passengers
   get 'dashboard/index'
   post 'dashboard/create_form'
   root "dashboard#index"

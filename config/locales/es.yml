@@ -10,6 +10,9 @@ es:
       user:
         one: "Usuario"
         other: "Usuarios"
+      passenger:
+        one: "Pasajero"
+        other: "Pasajeros"
     attributes:
       card_types:
         code: "Código"
@@ -31,6 +34,11 @@ es:
         address: "Dirección"
         password: "Contraseña"
         password_confirmation: "Confirmación de contraseña"
+      passengers:
+        email: "Correo"
+        identification: "Número de identificación"
+        phone: "Telefono"
+        address: "Dirección"
     messages:
       card_type:
         created: "Tipo de identificación creado exitosamente."
@@ -44,6 +52,10 @@ es:
         created: "Usuario creado exitosamente."
         destroyed: "Usuario eliminado exitosamente."
         updated: "Usuario actualizado exitosamente."
+      passengers:
+        created: "Pasajero creado exitosamente."
+        destroyed: "Pasajero eliminado exitosamente."
+        updated: "Pasajero actualizado exitosamente."
     errors:
       models:
         card_type:
@@ -94,6 +106,24 @@ es:
               blank: "no puede estar vacío."
             password_confirmation:
               blank: "no puede estar vacío."
+        passenger:
+          attributes:
+            email:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            identification:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            phone:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            address:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            password:
+              blank: "no puede estar vacío."
+            password_confirmation:
+              blank: "no puede estar vacío."
   gui:
     menu:
       home: "Inicio"
@@ -121,6 +151,8 @@ es:
         index: "Lista de grupos sanguíneos"
       users:
         index: "Lista de usuarios"
+      passengers:
+        index: "Lista de pasajeros"
       register_user_data: "Registre la información del pasajero (usuario)"
   errors:
     messages:

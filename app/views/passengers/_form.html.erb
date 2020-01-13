@@ -1,0 +1,28 @@
+<%= form_with(model: passenger, local: true) do |form| %>
+  <%= render "partials/errorscontent", object: @passenger %>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.passengers.identification")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :identification, autofocus: true, class: "form-control", placeholder: t("activerecord.attributes.passengers.identification"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.passengers.email")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.email_field :email, autocomplete: "email", class: "form-control", placeholder: t("activerecord.attributes.passengers.email"), required: true %>
+    </div>
+  </div>
+
+  <div id="d_user_phone" class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.passengers.phone")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.text_field :phone, class: "form-control", placeholder: t("activerecord.attributes.passengers.phone"), required: true %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t("gui.actions.save"), class: "btn btn-success btn-block" %>
+  </div>
+<% end %>

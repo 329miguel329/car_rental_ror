@@ -22,4 +22,12 @@
       <% end %>
     </li>
   <% end %>
+  <% if can? :read, Passenger %>
+    <li class="nav-item">
+      <%= link_to passengers_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.passenger", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
 </ul>

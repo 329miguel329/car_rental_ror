@@ -1,0 +1,6 @@
+<h1><i class="fa fa-plus-square"></i>&nbsp;&nbsp;<%= "#{t("gui.actions.edit")} #{t("activerecord.models.passenger", count: 1)}" %></h1>
+
+<%= render 'form', passenger: @passenger %>
+
+<%= link_to t("gui.actions.show"), @passenger, class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), passengers_path, class: "btn btn-secondary" %>
