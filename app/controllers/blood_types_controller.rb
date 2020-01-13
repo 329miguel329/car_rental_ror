@@ -1,4 +1,5 @@
 class BloodTypesController < ApplicationController
+  before_action :can_countinue
   before_action :set_blood_type, only: [:show, :edit, :update, :destroy]
   add_breadcrumb "<i class='fa fa-home'></i> #{I18n.t("gui.menu.home")}".html_safe, :root_path
 
@@ -105,5 +106,12 @@ class BloodTypesController < ApplicationController
 
     def params_select2
       params.require(:select2).permit(:q)
+    end
+
+    def can_countinue
+      unless can? action_name.to_sym, BloodType
+        flash[:danger] = I18n.t 'errors.messages.user_not_permission'
+        redirect_to root_path and return
+      end
     end
 end

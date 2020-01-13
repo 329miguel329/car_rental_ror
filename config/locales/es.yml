@@ -105,6 +105,7 @@ es:
       destroy: "Eliminar"
       back: "Regresar"
       select: "Seleccione"
+      login: "Iniciar sesión"
       logout: "Cerrar sesión"
     messages:
       confirm:
@@ -119,3 +120,10 @@ es:
         index: "Lista de grupos sanguíneos"
       users:
         index: "Lista de usuarios"
+  errors:
+    messages:
+      delete_association: "No se ha podido eliminar este registro, ya que tiene asociaciones con otros registros."
+      user_not_permission: "Usted no tiene permisos para realizar esta acción"
+      delete_sch_with_checkin: "No se peude eliminar la programación porque ya hay registros de entrada"
+      edit_sch_with_checkin: "No se peude editar la programación porque ya hay registros de entrada"
+      

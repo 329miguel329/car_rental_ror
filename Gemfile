@@ -69,3 +69,6 @@ gem 'sweet-alert2-rails'
 
 # select2-rails: JQuery library to manage select tags
 gem 'select2-rails'
+
+# CanCanCan is an authorization library for Ruby >= 2.2.0 and Ruby on Rails >= 4.2 which restricts what resources a given user is allowed to access.
+gem 'cancancan'

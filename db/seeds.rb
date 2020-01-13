@@ -8,3 +8,5 @@ BloodType.create({:code => 'O+', :name => 'O Positivo'})
 BloodType.create({:code => 'O-', :name => 'O Negativo'})
 BloodType.create({:code => 'AB+', :name => 'AB+ Positivo'})
 
+# USer
+User.create({:email => 'admin@carrental.com', :first_name => 'Administrator', :last_name => 'Car Rental', :blood_type_id => BloodType.first.id, :card_type_id => CardType.first.id, :identfication => '123456789', :rol => 'administrator'})
