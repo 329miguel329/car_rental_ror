@@ -91,6 +91,7 @@ en:
   gui:
     menu:
       home: "Home"
+      dashboard: "Home"
     actions:
       new: "New"
       show: "Show"
@@ -98,6 +99,7 @@ en:
       destroy: "Delete"
       back: "Back"
       select: "Select"
+      logout: "Logout"
     messages:
       confirm:
         destroy:

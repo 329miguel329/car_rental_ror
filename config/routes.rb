@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "card_types#index"
+  get 'dashboard/index'
+  root "dashboard#index"
 
   devise_for :users, :controllers => { registrations: 'users/registrations'}
 

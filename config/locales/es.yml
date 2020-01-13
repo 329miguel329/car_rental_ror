@@ -91,6 +91,7 @@ es:
   gui:
     menu:
       home: "Inicio"
+      dashboard: "Inicio"
     actions:
       new: "Nuevo"
       show: "Ver"
@@ -98,6 +99,7 @@ es:
       destroy: "Eliminar"
       back: "Regresar"
       select: "Seleccione"
+      logout: "Cerrar sesión"
     messages:
       confirm:
         destroy:
