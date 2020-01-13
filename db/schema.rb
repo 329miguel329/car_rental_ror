@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_11_205603) do
+ActiveRecord::Schema.define(version: 2020_01_13_025058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,4 +31,31 @@ ActiveRecord::Schema.define(version: 2020_01_11_205603) do
     t.index ["code"], name: "index_card_types_on_code", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.bigint "blood_type_id"
+    t.bigint "card_type_id"
+    t.string "identification", null: false
+    t.string "rol", null: false
+    t.string "property_card"
+    t.string "license"
+    t.string "phone"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blood_type_id"], name: "index_users_on_blood_type_id"
+    t.index ["card_type_id"], name: "index_users_on_card_type_id"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["identification"], name: "index_users_on_identification", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "users", "blood_types"
+  add_foreign_key "users", "card_types"
 end

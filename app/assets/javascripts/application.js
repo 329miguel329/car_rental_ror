@@ -28,6 +28,10 @@
 // Core plugin JavaScript
 //= require vendor/jquery-easing/jquery.easing.min.js
 
+// Select2
+//= require select2-full
+//= require select2_locale_es
+
 // Page level plugin JavaScript
 // require vendor/chart.js/Chart.min.js <-- Library not working
 //= require vendor/datatables/jquery.dataTables.js

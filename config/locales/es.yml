@@ -7,6 +7,9 @@ es:
       blood_type:
         one: "Grupo Sanguíneo"
         other: "Grupos Sanguíneos"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
     attributes:
       card_types:
         code: "Código"
@@ -14,6 +17,18 @@ es:
       blood_types:
         code: "Código"
         name: "Nombre"
+      users:
+        email: "Correo"
+        first_name: "Nombres"
+        last_name: "Apellidos"
+        blood_type: "Grupo sanguíneo"
+        card_type: "Tipo de identificación"
+        identification: "Número de identificación"
+        rol: "Rol usuario"
+        property_card: "Tarjeta de propiedad"
+        license: "Licencía"
+        phone: "Telefono"
+        address: "Dirección"
     messages:
       card_type:
         created: "Tipo de identificación creado exitosamente."
@@ -23,6 +38,10 @@ es:
         created: "Grupo sanguíneo creado exitosamente."
         destroyed: "Grupo sanguíneo eliminado exitosamente."
         updated: "Grupo sanguíneo actualizado exitosamente."
+      user:
+        created: "Usuario creado exitosamente."
+        destroyed: "Usuario eliminado exitosamente."
+        updated: "Usuario actualizado exitosamente."
     errors:
       models:
         card_type:
@@ -39,6 +58,36 @@ es:
               taken: "indicado ya está creado en esta plataforma."
             name:
               blank: "no puede estar vacío."
+        user:
+          attributes:
+            email:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            first_name:
+              blank: "no puede estar vacío."
+            last_name:
+              blank: "no puede estar vacío."
+            blood_type:
+              blank: "no puede estar vacío."
+            card_type:
+              blank: "no puede estar vacío."
+            identification:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            rol:
+              blank: "no puede estar vacío."
+            property_card:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            license:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            phone:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            address:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
   gui:
     menu:
       home: "Inicio"
@@ -48,6 +97,7 @@ es:
       edit: "Editar"
       destroy: "Eliminar"
       back: "Regresar"
+      select: "Seleccione"
     messages:
       confirm:
         destroy:
@@ -59,3 +109,5 @@ es:
         index: "Lista de tipos de identificación"
       blood_types:
         index: "Lista de grupos sanguíneos"
+      users:
+        index: "Lista de usuarios"

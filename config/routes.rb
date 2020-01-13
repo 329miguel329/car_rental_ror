@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  resources :blood_types
   root "card_types#index"
-  resources :card_types
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users, :controllers => { registrations: 'users/registrations'}
+
+  resources :blood_types do
+    collection do
+      get "select2"
+    end
+  end
+
+  resources :card_types do
+    collection do
+      get "select2"
+    end
+  end
 end

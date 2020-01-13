@@ -10,11 +10,7 @@ class CardTypesController < ApplicationController
     respond_to do |format|
       format.html
       format.json {
-        if params.has_key?(:select2)
-          render json: CardType.select2(params_select2)
-        else
-          render json: {head: :no_content}
-        end
+        render json: {head: :no_content}
       }
     end
   end
@@ -83,6 +79,15 @@ class CardTypesController < ApplicationController
     end
   end
 
+  # GET /card_types/select2
+  def select2
+    respond_to do |format|
+      format.json {
+        render json: CardType.select2(params_select2)
+      }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_card_type
@@ -95,6 +100,6 @@ class CardTypesController < ApplicationController
     end
 
     def params_select2
-      params.require(:select2).permit(:code, :name)
+      params.require(:select2).permit(:q)
     end
 end

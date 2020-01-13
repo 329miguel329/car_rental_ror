@@ -7,6 +7,8 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module CarRental
+  ROL_DRIVER = "driver"
+  ROL_PASSENGER = "passenger"
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
@@ -40,6 +42,7 @@ module CarRental
     end
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'sb_admin')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'select2')
     config.assets.precompile += ['application-print.css']
   end
 end

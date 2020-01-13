@@ -7,6 +7,9 @@ en:
       blood_type:
         one: "Blood type"
         other: "Blood types"
+      user:
+        one: "User"
+        other: "Users"
     attributes:
       card_types:
         code: "Code"
@@ -14,6 +17,18 @@ en:
       blood_types:
         code: "Code"
         name: "Name"
+      users:
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        blood_type: "Blood type"
+        card_type: "Id type"
+        identification: "Identification"
+        rol: "User rol"
+        property_card: "Property card"
+        license: "License"
+        phone: "Phone"
+        address: "Address"
     messages:
       card_type:
         created: "Id type created successfully."
@@ -23,6 +38,10 @@ en:
         created: "Blood type created successfully."
         destroyed: "Blood type destroyed successfully."
         updated: "Blood type updated successfully."
+      user:
+        created: "User created successfully."
+        destroyed: "User destroyed successfully."
+        updated: "User updated successfully."
     errors:
       models:
         card_type:
@@ -39,6 +58,36 @@ en:
               taken: "indicated is already created on this platform."
             name:
               blank: "can't be blank."
+        user:
+          attributes:
+            email:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            first_name:
+              blank: "can't be blank."
+            last_name:
+              blank: "can't be blank."
+            blood_type:
+              blank: "can't be blank."
+            card_type:
+              blank: "can't be blank."
+            identification:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            rol:
+              blank: "can't be blank."
+            property_card:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            license:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            phone:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            address:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
   gui:
     menu:
       home: "Home"
@@ -48,6 +97,7 @@ en:
       edit: "Edit"
       destroy: "Delete"
       back: "Back"
+      select: "Select"
     messages:
       confirm:
         destroy:
@@ -59,3 +109,5 @@ en:
         index: "List id types"
       blood_types:
         index: "List blood types"
+      users:
+        index: "List users"

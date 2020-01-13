@@ -14,12 +14,17 @@ class BloodType < ApplicationRecord
   end
 
   def self.select2(oParams)
+    puts "///////////////////////////////////////////"
+    puts oParams
+    puts "///////////////////////////////////////////"
     if oParams.has_key?(:q)
       param_query = "%#{oParams[:q]}%"
       param_query = param_query.downcase
     else
       param_query = "NULL_ERROR";
     end
-    where("lower(code) like ? or lower(name) like ?", param_query, param_query).select("id, code, name")
+    select_scope = "id, code, name"
+    where_scope = "lower(code) like ? or lower(name) like ?", param_query, param_query
+    where(where_scope).select(select_scope)
   end
 end

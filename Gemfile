@@ -66,3 +66,6 @@ gem 'breadcrumbs_on_rails', '~> 3.0', '>= 3.0.1'
 gem 'jquery-rails'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
+
+# select2-rails: JQuery library to manage select tags
+gem 'select2-rails'
