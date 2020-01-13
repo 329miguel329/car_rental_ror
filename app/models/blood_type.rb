@@ -14,9 +14,6 @@ class BloodType < ApplicationRecord
   end
 
   def self.select2(oParams)
-    puts "///////////////////////////////////////////"
-    puts oParams
-    puts "///////////////////////////////////////////"
     if oParams.has_key?(:q)
       param_query = "%#{oParams[:q]}%"
       param_query = param_query.downcase

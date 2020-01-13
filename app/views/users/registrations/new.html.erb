@@ -1,109 +1,109 @@
-<div class="card-header">
-  Sign up
+<div class="card card-register mx-auto mt-5">
+  <div class="card-header">
+    Sign up
+  </div>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.email")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t("activerecord.attributes.users.email"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.first_name")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :first_name, class: "form-control", placeholder: t("activerecord.attributes.users.first_name"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.last_name")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :last_name, class: "form-control", placeholder: t("activerecord.attributes.users.last_name"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.blood_type")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <select id="user_blood_type_id" name="user[blood_type_id]"  required="required">
+            <% unless @user.blood_type.nil? %>
+                <option value="<%= @user.blood_type.id %>" selected="selected"><%= @user.blood_type.full_name_view %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.card_type")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <select id="user_card_type_id" name="user[card_type_id]"  required="required">
+            <% unless @user.card_type.nil? %>
+                <option value="<%= @user.card_type.id %>" selected="selected"><%= @user.card_type.full_name_view %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.identification")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :identification, class: "form-control", placeholder: t("activerecord.attributes.users.identification"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.rol")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%
+          select_options = [
+            [t("activerecord.options.user.driver"), CarRental::ROL_DRIVER],
+            [t("activerecord.options.user.passenger"), CarRental::ROL_PASSENGER]
+          ]
+          %>
+          <%= form.select :rol, options_for_select(select_options, selected: "driver"), {}, {class: 'form-control'} %>
+        </div>
+      </div>
+
+      <div id="d_user_property_card" class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.property_card")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :property_card, class: "form-control", placeholder: t("activerecord.attributes.users.property_card"), required: true %>
+        </div>
+      </div>
+
+      <div id="d_user_license" class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.license")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :license, class: "form-control", placeholder: t("activerecord.attributes.users.license"), required: true %>
+        </div>
+      </div>
+
+      <div id="d_user_phone" class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.phone")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :phone, class: "form-control", placeholder: t("activerecord.attributes.users.phone"), required: true %>
+        </div>
+      </div>
+
+      <div id="d_user_address" class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.address")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :address, class: "form-control", placeholder: t("activerecord.attributes.users.address"), required: true %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Sign up", class: "btn btn-success btn-block" %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
 </div>
-<div class="card-body">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.email")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t("activerecord.attributes.users.email"), required: true %>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.first_name")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :first_name, class: "form-control", placeholder: t("activerecord.attributes.users.first_name"), required: true %>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.last_name")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :last_name, class: "form-control", placeholder: t("activerecord.attributes.users.last_name"), required: true %>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.blood_type")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <select id="user_blood_type_id" name="user[blood_type_id]"  required="required">
-          <% unless @user.blood_type.nil? %>
-              <option value="<%= @user.blood_type.id %>" selected="selected"><%= @user.blood_type.full_name_view %></option>
-          <% end %>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.card_type")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <select id="user_card_type_id" name="user[card_type_id]"  required="required">
-          <% unless @user.card_type.nil? %>
-              <option value="<%= @user.card_type.id %>" selected="selected"><%= @user.card_type.full_name_view %></option>
-          <% end %>
-        </select>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.identification")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :identification, class: "form-control", placeholder: t("activerecord.attributes.users.identification"), required: true %>
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.rol")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%
-        select_options = [
-          [t("activerecord.options.user.driver"), CarRental::ROL_DRIVER],
-          [t("activerecord.options.user.passenger"), CarRental::ROL_PASSENGER]
-        ]
-        %>
-        <%= form.select :rol, options_for_select(select_options, selected: "driver"), {}, {class: 'form-control'} %>
-      </div>
-    </div>
-
-    <div id="d_user_property_card" class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.property_card")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :property_card, class: "form-control", placeholder: t("activerecord.attributes.users.property_card"), required: true %>
-      </div>
-    </div>
-
-    <div id="d_user_license" class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.license")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :license, class: "form-control", placeholder: t("activerecord.attributes.users.license"), required: true %>
-      </div>
-    </div>
-
-    <div id="d_user_phone" class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.phone")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :phone, class: "form-control", placeholder: t("activerecord.attributes.users.phone"), required: true %>
-      </div>
-    </div>
-
-    <div id="d_user_address" class="form-group row">
-      <%= form.label "#{t("activerecord.attributes.users.address")} *", class: "col-sm-3 col-form-label" %>
-      <div class="col-sm-9">
-        <%= form.text_field :address, class: "form-control", placeholder: t("activerecord.attributes.users.address"), required: true %>
-      </div>
-    </div>
-
-    <div class="actions">
-      <%= form.submit "Sign up", class: "btn btn-success btn-block" %>
-    </div>
-  <% end %>
-</div>
-
-<%= render "users/shared/links" %>
-
 <script type="text/javascript">
 $(document).ready(function() {
   // Initialize Select2 in element with id user_rol

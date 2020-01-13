@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # Chekc if user is signed_in
+  before_action :authenticate_user!, unless: :json_request?
 
   # Local setting in URL to translate the content with I18n.
   before_action :set_locale

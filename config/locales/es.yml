@@ -29,6 +29,8 @@ es:
         license: "Licencía"
         phone: "Telefono"
         address: "Dirección"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
     messages:
       card_type:
         created: "Tipo de identificación creado exitosamente."
@@ -88,6 +90,10 @@ es:
             address:
               blank: "no puede estar vacío."
               taken: "indicado ya está creado en esta plataforma."
+            password:
+              blank: "no puede estar vacío."
+            password_confirmation:
+              blank: "no puede estar vacío."
   gui:
     menu:
       home: "Inicio"

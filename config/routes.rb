@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   root "dashboard#index"
 
-  devise_for :users, :controllers => { registrations: 'users/registrations'}
+  devise_for :users, :controllers => {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 
   resources :blood_types do
     collection do

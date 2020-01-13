@@ -29,6 +29,8 @@ en:
         license: "License"
         phone: "Phone"
         address: "Address"
+        password: "Password"
+        password_confirmation: "Password confirmation"
     messages:
       card_type:
         created: "Id type created successfully."
@@ -88,6 +90,10 @@ en:
             address:
               blank: "can't be blank."
               taken: "indicated is already created on this platform."
+            password:
+              blank: "can't be blank."
+            password_confirmation:
+              blank: "can't be blank."
   gui:
     menu:
       home: "Home"
