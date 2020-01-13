@@ -107,6 +107,7 @@ en:
       select: "Select"
       login: "Login"
       logout: "Logout"
+      save: "Save"
     messages:
       confirm:
         destroy:
@@ -120,6 +121,7 @@ en:
         index: "List blood types"
       users:
         index: "List users"
+      register_user_data: "Record passenger information (user)"
   errors:
     messages:
       delete_association: "This record could not be deleted because it has associations with other records."

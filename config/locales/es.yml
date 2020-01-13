@@ -107,6 +107,7 @@ es:
       select: "Seleccione"
       login: "Iniciar sesión"
       logout: "Cerrar sesión"
+      save: "Guardar"
     messages:
       confirm:
         destroy:
@@ -120,6 +121,7 @@ es:
         index: "Lista de grupos sanguíneos"
       users:
         index: "Lista de usuarios"
+      register_user_data: "Registre la información del pasajero (usuario)"
   errors:
     messages:
       delete_association: "No se ha podido eliminar este registro, ya que tiene asociaciones con otros registros."

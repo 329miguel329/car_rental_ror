@@ -1,2 +1,172 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<div class="card card-register mx-auto mt-5">
+  <div class="card-header">
+    <%= t("gui.messages.register_user_data") %>
+  </div>
+  <div class="card-body">
+    <%= form_for(@user, url: dashboard_create_form_path(@user)) do |form| %>
+      <%= render "devise/shared/error_messages", resource: @user %>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.email")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t("activerecord.attributes.users.email"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.first_name")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :first_name, class: "form-control", placeholder: t("activerecord.attributes.users.first_name"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.last_name")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :last_name, class: "form-control", placeholder: t("activerecord.attributes.users.last_name"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.blood_type")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <select id="user_blood_type_id" name="user[blood_type_id]"  required="required">
+            <% unless @user.blood_type.nil? %>
+                <option value="<%= @user.blood_type.id %>" selected="selected"><%= @user.blood_type.full_name_view %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.card_type")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <select id="user_card_type_id" name="user[card_type_id]"  required="required">
+            <% unless @user.card_type.nil? %>
+                <option value="<%= @user.card_type.id %>" selected="selected"><%= @user.card_type.full_name_view %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.identification")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :identification, class: "form-control", placeholder: t("activerecord.attributes.users.identification"), required: true %>
+        </div>
+      </div>
+
+      <div id="d_user_phone" class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.users.phone")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :phone, class: "form-control", placeholder: t("activerecord.attributes.users.phone"), required: true %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit t("gui.actions.save"), class: "btn btn-success btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+  // Initialize Select2 in element with id user_rol
+  $("#user_rol").select2({
+    theme: "bootstrap"
+  }).on('select2:select', function (e) {
+    let s_value_selected = e.params.data.id;
+    if(s_value_selected == "<%= CarRental::ROL_DRIVER %>") {
+      $("#d_user_property_card").show("slow");
+      $("#user_property_card").attr("required", "required");
+      $("#d_user_license").show("slow");
+      $("#user_license").attr("required", "required");
+      $("#d_user_phone").show("slow");
+      $("#user_phone").attr("required", "required");
+      $("#d_user_address").show("slow");
+      $("#user_address").attr("required", "required");
+    } else {
+      $("#d_user_property_card").hide("slow");
+      $("#user_property_card").removeAttr("required");
+      $("#d_user_license").hide("slow");
+      $("#user_license").removeAttr("required");
+      $("#d_user_phone").hide("slow");
+      $("#user_phone").removeAttr("required");
+      $("#d_user_address").hide("slow");
+      $("#user_address").removeAttr("required");
+    }
+  });
+
+  // Initialize Select2 in element with id user_blood_type_id
+  $("#user_blood_type_id").select2({
+    width: "100%",
+    minimumInputLength: 1,
+    <% if I18n.locale == :es %>
+    language: "es",
+    <% end %>
+    ajax: {
+      url: "<%= select2_blood_types_path(format: :json) %>",
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+        return {
+          select2: {
+            q: params.term,
+            type: "select2"
+          }
+        };
+      },
+      processResults: function (data, page) {
+        return {
+          results: $.map(data, function (o_blood_type) {
+            return {
+              text: get_full_name(o_blood_type),
+              id: o_blood_type.id
+            }
+          })
+        };
+      },
+      cache: true
+    },
+    escapeMarkup: function (markup) { return markup; },
+    theme: "bootstrap",
+    placeholder: "<%= t("gui.actions.select") %>"
+  });
+
+  // Initialize Select2 in element with id user_card_type_id
+  $("#user_card_type_id").select2({
+    width: "100%",
+    minimumInputLength: 1,
+    <% if I18n.locale == :es %>
+    language: "es",
+    <% end %>
+    ajax: {
+      url: "<%= select2_card_types_path(format: :json) %>",
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+        return {
+          select2: {
+            q: params.term,
+            type: "select2"
+          }
+        };
+      },
+      processResults: function (data, page) {
+        return {
+          results: $.map(data, function (o_card_type) {
+            return {
+              text: get_full_name(o_card_type),
+              id: o_card_type.id
+            }
+          })
+        };
+      },
+      cache: true
+    },
+    escapeMarkup: function (markup) { return markup; },
+    theme: "bootstrap",
+    placeholder: "<%= t("gui.actions.select") %>"
+  });
+});
+</script>
