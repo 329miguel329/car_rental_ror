@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :passengers
+  resources :contracts
   get 'dashboard/index'
   post 'dashboard/create_form'
   root "dashboard#index"
@@ -8,6 +8,17 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  resources :users do
+    collection do
+      get 'select2'
+    end
+  end
+
+  resources :passengers do
+    collection do
+      get 'select2'
+    end
+  end
 
   resources :blood_types do
     collection do

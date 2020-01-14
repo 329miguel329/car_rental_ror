@@ -15,7 +15,7 @@ class Ability
     when "administrator"
       can :manage, :all
     when "driver"
-      can [:create, :read], [User]
+      can [:create, :read], [Contract]
     when "passenger"
       cannot :manage, :all
     end

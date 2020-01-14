@@ -13,6 +13,9 @@ es:
       passenger:
         one: "Pasajero"
         other: "Pasajeros"
+      contract:
+        one: "Contrato"
+        other: "Contratos"
     attributes:
       card_types:
         code: "Código"
@@ -38,7 +41,14 @@ es:
         email: "Correo"
         identification: "Número de identificación"
         phone: "Telefono"
-        address: "Dirección"
+      contracts:
+        user: "Conductor"
+        passenger: "Pasajero"
+        minute_time: "Tiempo (minutos)"
+        distance: "Distancia (Km)"
+        price: "Valor $COP"
+        origin: "Dirección origén"
+        destination: "Dirección destino"
     messages:
       card_type:
         created: "Tipo de identificación creado exitosamente."
@@ -56,6 +66,10 @@ es:
         created: "Pasajero creado exitosamente."
         destroyed: "Pasajero eliminado exitosamente."
         updated: "Pasajero actualizado exitosamente."
+      contracts:
+        created: "Contrato creado exitosamente."
+        destroyed: "Contrato eliminado exitosamente."
+        updated: "Contrato actualizado exitosamente."
     errors:
       models:
         card_type:
@@ -117,12 +131,21 @@ es:
             phone:
               blank: "no puede estar vacío."
               taken: "indicado ya está creado en esta plataforma."
-            address:
+        contract:
+          attributes:
+            user:
               blank: "no puede estar vacío."
-              taken: "indicado ya está creado en esta plataforma."
-            password:
+            passemger:
               blank: "no puede estar vacío."
-            password_confirmation:
+            minute_time:
+              blank: "no puede estar vacío."
+            distance:
+              blank: "no puede estar vacío."
+            price:
+              blank: "no puede estar vacío."
+            origin:
+              blank: "no puede estar vacío."
+            destination:
               blank: "no puede estar vacío."
   gui:
     menu:
@@ -153,6 +176,8 @@ es:
         index: "Lista de usuarios"
       passengers:
         index: "Lista de pasajeros"
+      contracts:
+        index: "Lista de contratos"
       register_user_data: "Registre la información del pasajero (usuario)"
   errors:
     messages:

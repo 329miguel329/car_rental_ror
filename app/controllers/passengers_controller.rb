@@ -21,7 +21,7 @@ class PassengersController < ApplicationController
   def new
     add_breadcrumb "<i class='fa fa-info-circle'></i> #{I18n.t("activerecord.models.passenger", count: 2)}".html_safe, passengers_path
     add_breadcrumb "<i class='fa fa-pencil-square-o'></i> #{I18n.t("gui.actions.new")}".html_safe, new_passenger_path
-    @passenger = CardType.new
+    @passenger = Passenger.new
   end
 
   # GET /passengers/1/edit
@@ -33,7 +33,7 @@ class PassengersController < ApplicationController
   # POST /passengers
   # POST /passengers.json
   def create
-    @passenger = CardType.new(passenger_params)
+    @passenger = Passenger.new(passenger_params)
     respond_to do |format|
       if @passenger.save
         format.html { redirect_to passengers_path, notice: (I18n.t 'activerecord.messages.passenger.created') }
@@ -75,6 +75,15 @@ class PassengersController < ApplicationController
     end
   end
 
+  # GET /users/select2
+  def select2
+    respond_to do |format|
+      format.json {
+        render json: Passenger.select2(params_select2)
+      }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_passenger
@@ -87,9 +96,13 @@ class PassengersController < ApplicationController
     end
 
     def can_countinue
-      unless can? action_name.to_sym, CardType
+      unless can? action_name.to_sym, Passenger
         flash[:danger] = I18n.t 'errors.messages.user_not_permission'
         redirect_to root_path and return
       end
+    end
+
+    def params_select2
+      params.require(:select2).permit(:q)
     end
 end

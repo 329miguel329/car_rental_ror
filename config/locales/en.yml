@@ -13,6 +13,9 @@ en:
       passenger:
         one: "passenger"
         other: "Passengers"
+      contract:
+        one: "Contract"
+        other: "Contract"
     attributes:
       card_types:
         code: "Code"
@@ -38,6 +41,14 @@ en:
         email: "Email"
         identification: "Identification"
         phone: "Phone"
+      contracts:
+        user: "Driver"
+        passenger: "Passenger"
+        minute_time: "Time (minutes)"
+        distance: "Distance (Km)"
+        price: "Price $COP"
+        origin: "Origin address"
+        destination: "Destination address"
     messages:
       card_type:
         created: "Id type created successfully."
@@ -55,6 +66,10 @@ en:
         created: "Passenger created successfully."
         destroyed: "Passenger destroyed successfully."
         updated: "Passenger updated successfully."
+      contracts:
+        created: "Contract created successfully."
+        destroyed: "Contract destroyed successfully."
+        updated: "Contract updated successfully."
     errors:
       models:
         card_type:
@@ -116,6 +131,22 @@ en:
             phone:
               blank: "can't be blank."
               taken: "indicated is already created on this platform."
+        contract:
+          attributes:
+            user:
+              blank: "can't be blank."
+            passemger:
+              blank: "can't be blank."
+            minute_time:
+              blank: "can't be blank."
+            distance:
+              blank: "can't be blank."
+            price:
+              blank: "can't be blank."
+            origin:
+              blank: "can't be blank."
+            destination:
+              blank: "can't be blank."
   gui:
     menu:
       home: "Home"
@@ -145,6 +176,8 @@ en:
         index: "List users"
       passenger:
         index: "List passengers"
+      contract:
+        index: "List contracts"
       register_user_data: "Record passenger information (user)"
   errors:
     messages:

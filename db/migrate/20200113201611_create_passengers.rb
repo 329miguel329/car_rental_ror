@@ -7,7 +7,6 @@ class CreatePassengers < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :passengers, :email, unique: true
     add_index :passengers, :identification, unique: true
   end
 end

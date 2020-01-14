@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_201611) do
+ActiveRecord::Schema.define(version: 2020_01_14_143327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,13 +31,26 @@ ActiveRecord::Schema.define(version: 2020_01_13_201611) do
     t.index ["code"], name: "index_card_types_on_code", unique: true
   end
 
+  create_table "contracts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "passenger_id"
+    t.string "origin"
+    t.string "destination"
+    t.string "distance"
+    t.string "minute_time"
+    t.string "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passenger_id"], name: "index_contracts_on_passenger_id"
+    t.index ["user_id"], name: "index_contracts_on_user_id"
+  end
+
   create_table "passengers", force: :cascade do |t|
     t.string "identification", null: false
     t.string "email", null: false
     t.string "phone", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_passengers_on_email", unique: true
     t.index ["identification"], name: "index_passengers_on_identification", unique: true
   end
 
@@ -66,6 +79,8 @@ ActiveRecord::Schema.define(version: 2020_01_13_201611) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contracts", "passengers"
+  add_foreign_key "contracts", "users"
   add_foreign_key "users", "blood_types"
   add_foreign_key "users", "card_types"
 end

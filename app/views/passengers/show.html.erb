@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Identification:</strong>
   <%= @passenger.identification %>
@@ -15,5 +13,5 @@
   <%= @passenger.phone %>
 </p>
 
-<%= link_to 'Edit', edit_passenger_path(@passenger) %> |
-<%= link_to 'Back', passengers_path %>
+<%= link_to t("gui.actions.edit"), edit_passenger_path(@passenger), class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), passengers_path, class: "btn btn-secondary" %>

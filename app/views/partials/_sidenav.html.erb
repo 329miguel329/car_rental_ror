@@ -30,4 +30,12 @@
       <% end %>
     </li>
   <% end %>
+  <% if can? :read, Contract %>
+    <li class="nav-item">
+      <%= link_to contracts_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.contract", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
 </ul>

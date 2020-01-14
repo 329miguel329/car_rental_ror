@@ -1,0 +1,27 @@
+<p>
+  <strong>Driver:</strong>
+  <%= @contract.user_id %>
+</p>
+
+<p>
+  <strong>Passegener:</strong>
+  <%= @contract.passenger_id %>
+</p>
+
+<p>
+  <strong>Minute time:</strong>
+  <%= @contract.minute_time %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @contract.distance %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @contract.price %>
+</p>
+
+<%= link_to t("gui.actions.edit"), edit_contract_path(@contract), class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), contracts_path, class: "btn btn-secondary" %>

@@ -1,0 +1,138 @@
+<%= form_with(model: contract, local: true) do |form| %>
+  <%= render "partials/errorscontent", object: @contract %>
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.user")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <select id="contract_user_id" name="contract[user_id]"  required="required">
+        <% unless @contract.user.nil? %>
+            <option value="<%= @contract.user.id %>" selected="selected"><%= @contract.user.full_name_view %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.passenger")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <select id="contract_passenger_id" name="contract[passenger_id]"  required="required">
+        <% unless @contract.passenger.nil? %>
+            <option value="<%= @contract.passenger.id %>" selected="selected"><%= @contract.passenger.full_name_view %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.minute_time")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :minute_time, class: "form-control", placeholder: t("activerecord.attributes.contracts.minute_time"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.distance")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :distance, class: "form-control", placeholder: t("activerecord.attributes.contracts.distance"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.price")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :price, class: "form-control", placeholder: t("activerecord.attributes.contracts.price"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.origin")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :origin, class: "form-control", placeholder: t("activerecord.attributes.contracts.origin"), required: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= form.label "#{t("activerecord.attributes.contracts.destination")} *", class: "col-sm-3 col-form-label" %>
+    <div class="col-sm-9">
+      <%= form.number_field :destination, class: "form-control", placeholder: t("activerecord.attributes.contracts.destination"), required: true %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t("gui.actions.save"), class: "btn btn-success btn-block" %>
+  </div>
+<% end %>
+<script type="text/javascript">
+$(document).ready(function() {
+  // Initialize Select2 in element with id contract_user_id
+  $("#contract_user_id").select2({
+    width: "100%",
+    minimumInputLength: 1,
+    <% if I18n.locale == :es %>
+    language: "es",
+    <% end %>
+    ajax: {
+      url: "<%= select2_users_path(format: :json) %>",
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+        return {
+          select2: {
+            q: params.term,
+            type: "select2"
+          }
+        };
+      },
+      processResults: function (data, page) {
+        return {
+          results: $.map(data, function (o_user) {
+            return {
+              text: get_full_name_user(o_user),
+              id: o_user.id
+            }
+          })
+        };
+      },
+      cache: true
+    },
+    escapeMarkup: function (markup) { return markup; },
+    theme: "bootstrap",
+    placeholder: "<%= t("gui.actions.select") %>"
+  });
+
+  // Initialize Select2 in element with id contract_passenger_id
+  $("#contract_passenger_id").select2({
+    width: "100%",
+    minimumInputLength: 1,
+    <% if I18n.locale == :es %>
+    language: "es",
+    <% end %>
+    ajax: {
+      url: "<%= select2_passengers_path(format: :json) %>",
+      dataType: 'json',
+      delay: 250,
+      data: function (params) {
+        return {
+          select2: {
+            q: params.term,
+            type: "select2"
+          }
+        };
+      },
+      processResults: function (data, page) {
+        return {
+          results: $.map(data, function (o_passenger) {
+            return {
+              text: get_full_name_passenger(o_passenger),
+              id: o_passenger.id
+            }
+          })
+        };
+      },
+      cache: true
+    },
+    escapeMarkup: function (markup) { return markup; },
+    theme: "bootstrap",
+    placeholder: "<%= t("gui.actions.select") %>"
+  });
+});
+</script>
