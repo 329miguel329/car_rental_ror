@@ -1,0 +1,41 @@
+<!-- Sidebar -->
+<ul class="sidebar navbar-nav">
+  <li class="nav-item">
+    <%= link_to root_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-home"></i>
+      <span><%= t("gui.menu.dashboard") %></span>
+    <% end %>
+  </li>
+  <% if can? :read, CardType %>
+    <li class="nav-item">
+      <%= link_to card_types_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.card_type", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
+  <% if can? :read, BloodType %>
+    <li class="nav-item">
+      <%= link_to blood_types_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.blood_type", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
+  <% if can? :read, Passenger %>
+    <li class="nav-item">
+      <%= link_to passengers_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.passenger", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
+  <% if can? :read, Contract %>
+    <li class="nav-item">
+      <%= link_to contracts_path, class: "nav-link" do %>
+        <i class="fas fa-fw fa-info-circle"></i>
+        <span><%= t("activerecord.models.contract", count: 2) %></span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

@@ -1,33 +1,187 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      card_type:
+        one: "Id type"
+        other: "Id types"
+      blood_type:
+        one: "Blood type"
+        other: "Blood types"
+      user:
+        one: "User"
+        other: "Users"
+      passenger:
+        one: "passenger"
+        other: "Passengers"
+      contract:
+        one: "Contract"
+        other: "Contract"
+    attributes:
+      card_types:
+        code: "Code"
+        name: "Name"
+      blood_types:
+        code: "Code"
+        name: "Name"
+      users:
+        email: "Email"
+        first_name: "First name"
+        last_name: "Last name"
+        blood_type: "Blood type"
+        card_type: "Id type"
+        identification: "Identification"
+        rol: "User rol"
+        property_card: "Property card"
+        license: "License"
+        phone: "Phone"
+        address: "Address"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      passengers:
+        email: "Email"
+        identification: "Identification"
+        phone: "Phone"
+      contracts:
+        user: "Driver"
+        passenger: "Passenger"
+        minute_time: "Time (minutes)"
+        distance: "Distance (Km)"
+        price: "Price $COP"
+        origin: "Origin address"
+        destination: "Destination address"
+    messages:
+      card_type:
+        created: "Id type created successfully."
+        destroyed: "Id type destroyed successfully."
+        updated: "Id type updated successfully."
+      blood_type:
+        created: "Blood type created successfully."
+        destroyed: "Blood type destroyed successfully."
+        updated: "Blood type updated successfully."
+      user:
+        created: "User created successfully."
+        destroyed: "User destroyed successfully."
+        updated: "User updated successfully."
+      passenger:
+        created: "Passenger created successfully."
+        destroyed: "Passenger destroyed successfully."
+        updated: "Passenger updated successfully."
+      contract:
+        created: "Contract created successfully."
+        destroyed: "Contract destroyed successfully."
+        updated: "Contract updated successfully."
+    errors:
+      models:
+        card_type:
+          attributes:
+            code:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            name:
+              blank: "can't be blank."
+        blood_type:
+          attributes:
+            code:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            name:
+              blank: "can't be blank."
+        user:
+          attributes:
+            email:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            first_name:
+              blank: "can't be blank."
+            last_name:
+              blank: "can't be blank."
+            blood_type:
+              blank: "can't be blank."
+            card_type:
+              blank: "can't be blank."
+            identification:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            rol:
+              blank: "can't be blank."
+            property_card:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            license:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            phone:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            address:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            password:
+              blank: "can't be blank."
+            password_confirmation:
+              blank: "can't be blank."
+        passenger:
+          attributes:
+            email:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            identification:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+            phone:
+              blank: "can't be blank."
+              taken: "indicated is already created on this platform."
+        contract:
+          attributes:
+            user:
+              blank: "can't be blank."
+            passemger:
+              blank: "can't be blank."
+            minute_time:
+              blank: "can't be blank."
+            distance:
+              blank: "can't be blank."
+            price:
+              blank: "can't be blank."
+            origin:
+              blank: "can't be blank."
+            destination:
+              blank: "can't be blank."
+  gui:
+    menu:
+      home: "Home"
+      dashboard: "Home"
+    actions:
+      new: "New"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Delete"
+      back: "Back"
+      select: "Select"
+      login: "Login"
+      logout: "Logout"
+      save: "Save"
+    messages:
+      confirm:
+        destroy:
+          text: "If you confirm, the record will be permanently deleted."
+          title: "Are you sure?"
+          textConfirm: "Yes"
+          textCancel: "No"
+      card_types:
+        index: "List id types"
+      blood_types:
+        index: "List blood types"
+      users:
+        index: "List users"
+      passenger:
+        index: "List passengers"
+      contract:
+        index: "List contracts"
+      register_user_data: "Record passenger information (user)"
+  errors:
+    messages:
+      delete_association: "This record could not be deleted because it has associations with other records."
+      user_not_permission: "You do not have permission to perform this action"
+      delete_sch_with_checkin: "You can not delete the schedule because there are already entry records"
+      edit_sch_with_checkin: "You can not edit the schedule because there are already entry records"

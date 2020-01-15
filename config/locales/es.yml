@@ -1,0 +1,188 @@
+es:
+  activerecord:
+    models:
+      card_type:
+        one: "Tipo de identificación"
+        other: "Tipos de identificación"
+      blood_type:
+        one: "Grupo Sanguíneo"
+        other: "Grupos Sanguíneos"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      passenger:
+        one: "Pasajero"
+        other: "Pasajeros"
+      contract:
+        one: "Contrato"
+        other: "Contratos"
+    attributes:
+      card_types:
+        code: "Código"
+        name: "Nombre"
+      blood_types:
+        code: "Código"
+        name: "Nombre"
+      users:
+        email: "Correo"
+        first_name: "Nombres"
+        last_name: "Apellidos"
+        blood_type: "Grupo sanguíneo"
+        card_type: "Tipo de identificación"
+        identification: "Número de identificación"
+        rol: "Rol usuario"
+        property_card: "Tarjeta de propiedad"
+        license: "Licencía"
+        phone: "Telefono"
+        address: "Dirección"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+      passengers:
+        email: "Correo"
+        identification: "Número de identificación"
+        phone: "Telefono"
+      contracts:
+        user: "Conductor"
+        passenger: "Pasajero"
+        minute_time: "Tiempo (minutos)"
+        distance: "Distancia (Km)"
+        price: "Valor $COP"
+        origin: "Dirección origén"
+        destination: "Dirección destino"
+    messages:
+      card_type:
+        created: "Tipo de identificación creado exitosamente."
+        destroyed: "Tipo de identificación eliminado exitosamente."
+        updated: "Tipo de identificación actualizado exitosamente."
+      blood_type:
+        created: "Grupo sanguíneo creado exitosamente."
+        destroyed: "Grupo sanguíneo eliminado exitosamente."
+        updated: "Grupo sanguíneo actualizado exitosamente."
+      user:
+        created: "Usuario creado exitosamente."
+        destroyed: "Usuario eliminado exitosamente."
+        updated: "Usuario actualizado exitosamente."
+      passenger:
+        created: "Pasajero creado exitosamente."
+        destroyed: "Pasajero eliminado exitosamente."
+        updated: "Pasajero actualizado exitosamente."
+      contract:
+        created: "Contrato creado exitosamente."
+        destroyed: "Contrato eliminado exitosamente."
+        updated: "Contrato actualizado exitosamente."
+    errors:
+      models:
+        card_type:
+          attributes:
+            code:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            name:
+              blank: "no puede estar vacío."
+        blood_type:
+          attributes:
+            code:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            name:
+              blank: "no puede estar vacío."
+        user:
+          attributes:
+            email:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            first_name:
+              blank: "no puede estar vacío."
+            last_name:
+              blank: "no puede estar vacío."
+            blood_type:
+              blank: "no puede estar vacío."
+            card_type:
+              blank: "no puede estar vacío."
+            identification:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            rol:
+              blank: "no puede estar vacío."
+            property_card:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            license:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            phone:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            address:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            password:
+              blank: "no puede estar vacío."
+            password_confirmation:
+              blank: "no puede estar vacío."
+        passenger:
+          attributes:
+            email:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            identification:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+            phone:
+              blank: "no puede estar vacío."
+              taken: "indicado ya está creado en esta plataforma."
+        contract:
+          attributes:
+            user:
+              blank: "no puede estar vacío."
+            passemger:
+              blank: "no puede estar vacío."
+            minute_time:
+              blank: "no puede estar vacío."
+            distance:
+              blank: "no puede estar vacío."
+            price:
+              blank: "no puede estar vacío."
+            origin:
+              blank: "no puede estar vacío."
+            destination:
+              blank: "no puede estar vacío."
+  gui:
+    menu:
+      home: "Inicio"
+      dashboard: "Inicio"
+    actions:
+      new: "Nuevo"
+      show: "Ver"
+      edit: "Editar"
+      destroy: "Eliminar"
+      back: "Regresar"
+      select: "Seleccione"
+      login: "Iniciar sesión"
+      logout: "Cerrar sesión"
+      save: "Guardar"
+    messages:
+      confirm:
+        destroy:
+          text: "Si usted confirma, el registro será eliminado definitivamente."
+          title: "¿Está seguro?"
+          textConfirm: "Si"
+          textCancel: "No"
+      card_types:
+        index: "Lista de tipos de identificación"
+      blood_types:
+        index: "Lista de grupos sanguíneos"
+      users:
+        index: "Lista de usuarios"
+      passengers:
+        index: "Lista de pasajeros"
+      contracts:
+        index: "Lista de contratos"
+      register_user_data: "Registre la información del pasajero (usuario)"
+  errors:
+    messages:
+      delete_association: "No se ha podido eliminar este registro, ya que tiene asociaciones con otros registros."
+      user_not_permission: "Usted no tiene permisos para realizar esta acción"
+      delete_sch_with_checkin: "No se peude eliminar la programación porque ya hay registros de entrada"
+      edit_sch_with_checkin: "No se peude editar la programación porque ya hay registros de entrada"
+      

@@ -1,0 +1,17 @@
+<p>
+  <strong>Identification:</strong>
+  <%= @passenger.identification %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @passenger.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @passenger.phone %>
+</p>
+
+<%= link_to t("gui.actions.edit"), edit_passenger_path(@passenger), class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), passengers_path, class: "btn btn-secondary" %>

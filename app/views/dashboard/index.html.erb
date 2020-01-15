@@ -1,0 +1,113 @@
+<div class="card card-register mx-auto mt-5">
+  <div class="card-header">
+    <%= t("gui.messages.register_user_data") %>
+  </div>
+  <div class="card-body">
+    <%= form_for(@contract, url: dashboard_create_form_path(@contract)) do |form| %>
+      <%= render "partials/errorscontent", object: @contract %>
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.user")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= text_field_tag :driver, current_user.full_name, class: "form-control", disabled: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.passengers.identification")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.hidden_field :passenger_id %>
+          <%= text_field_tag "passenger[identification]", nil, class: "form-control", placeholder: t("activerecord.attributes.contracts.passenger"), required: true, :onkeyup => "Javascript: search_passenger()" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.passengers.email")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= text_field_tag "passenger[email]", nil, class: "form-control", placeholder: t("activerecord.attributes.passengers.email"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.passengers.phone")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= text_field_tag "passenger[phone]", nil, class: "form-control", placeholder: t("activerecord.attributes.passengers.phone"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.minute_time")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.number_field :minute_time, class: "form-control", placeholder: t("activerecord.attributes.contracts.minute_time"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.distance")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.number_field :distance, class: "form-control", placeholder: t("activerecord.attributes.contracts.distance"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.price")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.number_field :price, class: "form-control", placeholder: t("activerecord.attributes.contracts.price"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.origin")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :origin, class: "form-control", placeholder: t("activerecord.attributes.contracts.origin"), required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "#{t("activerecord.attributes.contracts.destination")} *", class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= form.text_field :destination, class: "form-control", placeholder: t("activerecord.attributes.contracts.destination"), required: true %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit t("gui.actions.save"), class: "btn btn-success btn-block" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+});
+function search_passenger() {
+  $.ajax({
+    url: "<%= get_passenger_by_identification_passengers_path(format: :json) %>",
+    type: "GET",
+    dataType: "json",
+    data: {
+      identification: $("#passenger_identification").val()
+    },
+    success: function(data) {
+      if(data) {
+        set_passenger_data(data);
+      } else {
+        set_passenger_data(null);
+      }
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+      console.log(xhr, ajaxOptions, thrownError);
+    }
+  });
+}
+
+function set_passenger_data(oPassenger) {
+  if(oPassenger) {
+    $("#contract_passenger_id").val(oPassenger.id);
+    $("#passenger_email").val(oPassenger.email);
+    $("#passenger_phone").val(oPassenger.phone);
+  } else {
+    $("#contract_passenger_id").val("");
+    $("#passenger_email").val("");
+    $("#passenger_phone").val("");
+  }
+}
+</script>

@@ -1,0 +1,11 @@
+.alert-notice {
+  color: #ffffff;
+  background-color: rgba(38,185,154,0.88);
+  border-color: rgba(38,185,154,0.88);
+}
+
+.alert-alert {
+  color: #ffffff;
+  background-color: rgba(231,76,60,0.88);
+  border-color: rgba(231,76,60,0.88);
+}

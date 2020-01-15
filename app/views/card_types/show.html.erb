@@ -1,0 +1,12 @@
+<p>
+  <strong>Code:</strong>
+  <%= @card_type.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @card_type.name %>
+</p>
+
+<%= link_to t("gui.actions.edit"), edit_card_type_path(@card_type), class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), card_types_path, class: "btn btn-secondary" %>

@@ -1,3 +1,35 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :contracts
+  get 'dashboard/index'
+  post 'dashboard/create_form'
+  root "dashboard#index"
+
+  devise_for :users, :controllers => {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  resources :users do
+    collection do
+      get 'select2'
+    end
+  end
+
+  resources :passengers do
+    collection do
+      get 'select2'
+      get 'get_passenger_by_identification'
+    end
+  end
+
+  resources :blood_types do
+    collection do
+      get 'select2'
+    end
+  end
+
+  resources :card_types do
+    collection do
+      get 'select2'
+    end
+  end
 end

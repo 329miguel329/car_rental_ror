@@ -1,0 +1,6 @@
+<h1><i class="fa fa-plus-square"></i>&nbsp;&nbsp;<%= "#{t("gui.actions.edit")} #{t("activerecord.models.blood_type", count: 1)}" %></h1>
+
+<%= render 'form', blood_type: @blood_type %>
+
+<%= link_to t("gui.actions.show"), @blood_type, class: "btn btn-primary" %> |
+<%= link_to t("gui.actions.back"), blood_types_path, class: "btn btn-secondary" %>
