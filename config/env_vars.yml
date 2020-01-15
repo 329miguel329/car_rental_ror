@@ -1,5 +1,5 @@
 development:
-  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_LOGIN: carrental985@gmail.com
   EMAIL_SMTP_PASSWORD: 'car_rental23456789'
   EMAIL_DOMAIN: gmail.com
   EMAIL_SMTP_SERVER: smtp.gmail.com
@@ -10,10 +10,11 @@ development:
   DATABASE_PASSWORD: 'car_rental'
   RAILS_MAX_THREADS: '5'
   HOST_DOMAIN: 'localhost:3000'
+  URL_ENVIRONMENT: http://localhost:3000
   secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
   secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
 production:
-  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_LOGIN: carrental985@gmail.com
   EMAIL_SMTP_PASSWORD: 'car_rental23456789'
   EMAIL_DOMAIN: gmail.com
   EMAIL_SMTP_SERVER: smtp.gmail.com
@@ -24,10 +25,11 @@ production:
   DATABASE_PASSWORD: 'car_rental'
   RAILS_MAX_THREADS: '5'
   HOST_DOMAIN: 'localhost:3000'
+  URL_ENVIRONMENT: http://localhost:3000
   secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
   secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
 test:
-  EMAIL_SMTP_LOGIN: car_rental@gmail.com
+  EMAIL_SMTP_LOGIN: carrental985@gmail.com
   EMAIL_SMTP_PASSWORD: 'car_rental23456789'
   EMAIL_DOMAIN: gmail.com
   EMAIL_SMTP_SERVER: smtp.gmail.com
@@ -38,5 +40,6 @@ test:
   DATABASE_PASSWORD: 'car_rental'
   RAILS_MAX_THREADS: '5'
   HOST_DOMAIN: 'localhost:3000'
+  URL_ENVIRONMENT: http://localhost:3000
   secret_token: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'
   secret_key_base: 'f22eb058c9bc14993d86a0429d7e321ed08567e1d263a89b8c4f176129c32506026888f1a1784e846cab0b0d4a6f45431ed9fb049b7481caadb15fede58f04b4'

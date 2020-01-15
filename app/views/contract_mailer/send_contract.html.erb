@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Gracias por usar CarRental</h1>
+    <p>
+      A continuación los datos del conductor y viaje realizado:
+      <h4>Datos del conductor:<h4>
+      <br>
+        Nombre:  <%= @contract.user.first_name %> <%= @contract.user.last_name %>
+      <br>
+        Identificación: <%= @contract.user.identification %>
+      <br>
+        Correo: <%= @contract.user.email %>
+      <br>
+        Teléfono: <%= @contract.user.phone %>
+      <br>
+      <hr>
+      <br>
+      <h4>Datos del viaje:<h4>
+      <br>
+      Dirección de origen: <%= @contract.origin %>
+      <br>
+      Dirección de destino: <%= @contract.destination %>
+      <br>
+      Distancia (Km): <%= @contract.distance %>
+      <br>
+      Tiempo de viaje (minutos): <%= @contract.minute_time %>
+      <br>
+      <hr>
+      <br>
+      <h4>Total a pagar: $<%= @contract.price %><h4>
+      <br>
+    </p>
+    <p>Gracias por preferirnos, le deseamos un buen día</p>
+  </body>
+</html>

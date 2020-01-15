@@ -11,6 +11,7 @@ class DashboardController < ApplicationController
       if oPassenger
         @contract.passenger_id = oPassenger.id
         if @contract.save
+          ContractMailer.send_contract(oPassenger, @contract).deliver_now
           format.html { redirect_to root_path, notice: (I18n.t 'activerecord.messages.contract.created') }
           format.json { render :show, status: :created, location: @contract }
         else

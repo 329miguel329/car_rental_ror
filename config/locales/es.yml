@@ -62,11 +62,11 @@ es:
         created: "Usuario creado exitosamente."
         destroyed: "Usuario eliminado exitosamente."
         updated: "Usuario actualizado exitosamente."
-      passengers:
+      passenger:
         created: "Pasajero creado exitosamente."
         destroyed: "Pasajero eliminado exitosamente."
         updated: "Pasajero actualizado exitosamente."
-      contracts:
+      contract:
         created: "Contrato creado exitosamente."
         destroyed: "Contrato eliminado exitosamente."
         updated: "Contrato actualizado exitosamente."

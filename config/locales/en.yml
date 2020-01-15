@@ -66,7 +66,7 @@ en:
         created: "Passenger created successfully."
         destroyed: "Passenger destroyed successfully."
         updated: "Passenger updated successfully."
-      contracts:
+      contract:
         created: "Contract created successfully."
         destroyed: "Contract destroyed successfully."
         updated: "Contract updated successfully."
