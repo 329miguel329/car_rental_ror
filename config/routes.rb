@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :passengers do
     collection do
       get 'select2'
+      get 'get_passenger_by_identification'
     end
   end
 

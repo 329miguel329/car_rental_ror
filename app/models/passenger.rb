@@ -23,4 +23,19 @@ class Passenger < ApplicationRecord
     where_scope = "lower(email) LIKE ? OR lower(phone) LIKE ? OR lower(identification) LIKE ?", param_query, param_query, param_query
     where(where_scope).select(select_scope)
   end
+
+  def self.get_passenger_by_identification(oParams)
+    self.find_by(:identification => oParams["identification"])
+  end
+
+  def self.set_data_passenger(oParams)
+    oPassenger = self.find_by(:identification => oParams["identification"])
+    if oPassenger
+      oPassenger.update(oParams)
+    else
+      oPassenger = self.new(oParams)
+      oPassenger.save(oParams)
+    end
+    oPassenger
+  end
 end

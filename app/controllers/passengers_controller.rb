@@ -75,11 +75,20 @@ class PassengersController < ApplicationController
     end
   end
 
-  # GET /users/select2
+  # GET /passengers/select2
   def select2
     respond_to do |format|
       format.json {
         render json: Passenger.select2(params_select2)
+      }
+    end
+  end
+
+  # GET /passengers/get_passenger_by_identification
+  def get_passenger_by_identification
+    respond_to do |format|
+      format.json {
+        render json: Passenger.get_passenger_by_identification(passenger_by_identification_params)
       }
     end
   end
@@ -95,14 +104,18 @@ class PassengersController < ApplicationController
       params.require(:passenger).permit(:identification, :email, :phone)
     end
 
+    def passenger_by_identification_params
+      params.permit(:identification)
+    end
+
+    def params_select2
+      params.require(:select2).permit(:q)
+    end
+    
     def can_countinue
       unless can? action_name.to_sym, Passenger
         flash[:danger] = I18n.t 'errors.messages.user_not_permission'
         redirect_to root_path and return
       end
-    end
-
-    def params_select2
-      params.require(:select2).permit(:q)
     end
 end
