@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :can_countinue!, unless: :json_request?
+  before_action :can_countinue, unless: :json_request?
   before_action :set_contract, only: [:show, :edit, :update, :destroy]
   add_breadcrumb "<i class='fa fa-home'></i> #{I18n.t("gui.menu.home")}".html_safe, :root_path
 
